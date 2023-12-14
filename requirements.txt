@@ -1,0 +1,11 @@
+# pyzmq
+# gabriel-server==2.1.1
+py-cpuinfo
+asyncio
+dlib==19.21.0
+wget==3.2
+mediapipe
+#opencv-python==4.7.0.68
+# torch==1.13.1
+# torchvision==0.14.1
+

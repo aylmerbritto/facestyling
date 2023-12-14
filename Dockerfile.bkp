@@ -1,0 +1,19 @@
+FROM continuumio/miniconda3
+COPY . .
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update
+RUN apt-get install -y \
+    gcc \
+    g++ \
+    make \
+    cmake \
+    build-essential \
+    libzmq3-dev \
+    pkg-config
+# COPY requirements.txt .
+RUN python3 -m pip install --no-deps pyzmq gabriel-server==2.1.1 gabriel_protocol
+RUN python3 -m pip install -r requirements.txt
+RUN rm -rf /root/.cache/pip/wheels/
+EXPOSE 9099
+# CMD python3 main.py
+CMD while true; do sleep 1000; done
